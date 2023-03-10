@@ -3,9 +3,12 @@ import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { autolinkConfig } from "./plugins/rehype-autolink-config";
+import rehypeSlug from "rehype-slug";
 
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "http://localhost:3000",
   integrations: [
     tailwind(),
     image({
@@ -14,4 +17,11 @@ export default defineConfig({
     mdx(),
     sitemap(),
   ],
+  markdown: {
+    rehypePlugins: [
+      rehypeSlug,
+      // This adds links to headings
+      [rehypeAutolinkHeadings, autolinkConfig],
+    ],
+  },
 });
