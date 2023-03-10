@@ -14,7 +14,7 @@ let parser = new Parser();
 
 let filter = new Filter();
 
-const blogFeeds = JSON.parse(process.env.BLOG_FEEDS);
+const blogFeeds = process.env.BLOG_FEEDS.split(",");
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
