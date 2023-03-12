@@ -8,7 +8,7 @@ import { autolinkConfig } from "./plugins/rehype-autolink-config";
 import rehypeSlug from "rehype-slug";
 
 export default defineConfig({
-  site: "http://localhost:3000",
+  site: "https://astroship.zank.it",
   integrations: [
     tailwind(),
     image({

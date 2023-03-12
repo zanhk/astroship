@@ -21,13 +21,10 @@ const { Content } = await entry.render();
 <Layout title={entry.data.title}>
   <Container>
     <div class="mx-auto prose prose-lg mt-14">
-      <a
-        href={`/category/${entry.data.category?.toLowerCase()}`}
-        class="text-blue-400 uppercase tracking-wider text-sm font-medium no-underline">
+      <a href={`/category/${entry.data.category?.toLowerCase()}`} class="text-blue-400 uppercase tracking-wider text-sm font-medium no-underline">
         {entry.data.category}
       </a>
-      <h1
-        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+      <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
         {entry.data.title}
       </h1>
       <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
@@ -35,9 +32,7 @@ const { Content } = await entry.render();
           {entry.data.author}
         </span>
         <span class="text-gray-400">•</span>
-        <time
-          class="text-gray-400"
-          datetime={entry.data.publishDate.toISOString()}>
+        <time class="text-gray-400" datetime={entry.data.publishDate.toISOString()}>
           {entry.data.publishDate.toDateString()}
         </time>
         <span class="text-gray-400 hidden md:block">•</span>
@@ -63,6 +58,25 @@ const { Content } = await entry.render();
           <p class="ml-2">Back to blog</p>
         </div>
       </a>
+    </div>
+    <div class="mx-auto prose prose-lg mt-20">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="zk-g/astroship"
+        data-repo-id="R_kgDOJCevvQ"
+        data-category="General"
+        data-category-id="DIC_kwDOJCevvc4CU0Pa"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async
+      ></script>
     </div>
   </Container>
 </Layout>
